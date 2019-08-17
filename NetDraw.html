@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <script src="logic.js"></script>
+        <script src="structure.js"></script>
+        <script src="menu.js"></script>
+        <script src="cabling.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <meta charset="utf-8" />
+        <title>NetDraw</title>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="icon-bar">
+        <a class="active" href="#" id="title"><i class="fa fa-home"></i></a> 
+        <a href="#" id="capture"><i  class="fa fa-object-group" ></i></a> 
+        <a href="#" id="msg"><i  class="fa fa-envelope"></i></a>
+        <a href="#" id="select"><i  class="fa fa-mouse-pointer"></i></a>
+        <a href="#" id="trash"><i  class="fa fa-trash"></i></a>
+   </div>
+                        
+    <div id="Div1" style=" width: 99%; height:200px; overflow:scroll;   border-style: solid;
+        border-width: 5px; border-color: #555; border-bottom-width: 0px;
+        border-bottom-color:white;border-right-color:  rgb(255, 229, 144); ">
+     <canvas id="canvas" width="4000px" height="4000px" style="background-color : rgb(243, 243, 243);"></canvas>
+    </div>
+       
+    <div id="line"> 
+      <label class="time" >Time : </label>
+      <label class="time" id="minutes"></label>  
+      <label class="time" id="seconds"> </label>
+    </div>  
+    
+    <div id="icon_div">
+      <img src="icons/icon_fixed.png" width="20%" id="icon_pc"/>
+      <img src="icons/icon_cable.png" width="20%" id="cable_ethernet">
+      <img id="router" src="icons/icon_router.png" width="20%"/>
+      <img id="icon_switch" src="icons/icon_switch.png" width="20%"/>
+    </div>
+       
+     <div id="all">
+       <div id="choice"> </div>   
+       <div class="popup" id="title_desc">Description<div id="Description">Here some information! Take a look!</div></div>
+       <div class="popup" id="title_sel"> Scenario<select id="mySelect" class="custom-select"> </select></div>
+       <div id="dashboard">
+         <table class="table1" id="myTable">
+           <tr>
+             <th>N.</th>
+             <th>Sender</th>
+             <th>Receiver</th>
+             <th>Status</th>     
+            </tr> 
+         </table>
+       </div> 
+       <div id="press">
+          <button class="button" id="reset" >Reset</button>
+          <button class="button" id="clear" >Clear Table</button>
+          <button class="button" id="save">Export</button>
+          <button class="button" id="import">Import</button>
+          <label for="fileToLoad"  class="custom-file-upload">
+            <i class="fa fa-cloud-upload"></i> Upload
+          </label>
+          <input type="file" id="fileToLoad">
+          <label id="upload"></label>        
+        </div>
+      </div>   
+    </div>
+  </body>
+  <script>
+  $(document).ready(function () {
+    $("#icon_pc").on({
+      "mouseover" : function() {
+         this.src = 'icons/icon_fixedB.png';
+      },
+      "mouseout" : function() {
+        this.src='icons/icon_fixed.png';
+      }
+    });
+
+    $("#cable_ethernet").on({
+      "mouseover" : function() {
+        this.src = 'icons/icon_cableB.png';
+      },
+      "mouseout" : function() {
+        this.src='icons/icon_cable.png';
+      }
+    });
+
+    $("#router").on({
+      "mouseover" : function() {
+        this.src = 'icons/icon_routerB.png';
+      },
+      "mouseout" : function() {
+        this.src='icons/icon_router.png';
+      }
+    });
+      
+    $("#icon_switch").on({
+      "mouseover" : function() {
+        this.src = 'icons/icon_switchB.png';
+      },
+      "mouseout" : function() {
+        this.src='icons/icon_switch.png';
+      }
+    });
+    
+    $("#crossover").on({
+      "mouseover" : function() {
+        this.src = 'icons/crossoverB.png';
+      },
+     "mouseout" : function() {
+        this.src='icons/crossover.png';
+      }
+    });
+  });
+  </script>
+</html>
